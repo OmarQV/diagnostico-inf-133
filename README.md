@@ -1,70 +1,98 @@
-# Getting Started with Create React App
+# Prueba de Diagnóstico
+## Programación Web III
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Antes de Empezar:
 
-## Available Scripts
+1. Asegúrate de tener instalado Git en tu computadora. Si no lo tienes, puedes descargarlo [aquí](https://git-scm.com/downloads).
 
-In the project directory, you can run:
+2. Asegúrate de tener una cuenta de GitHub. Si no la tienes, puedes crearla [aquí](https://github.com).
 
-### `npm start`
+3. Asegúrate de tener instalado Node.js en tu computadora. Si no lo tienes, puedes descargarlo [aquí](https://nodejs.org/es/download/).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+4. Asegúrate de tener instalado Visual Studio Code en tu computadora. Si no lo tienes, puedes descargarlo [aquí](https://code.visualstudio.com/download).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+5. En tu computadora crea un proyecto llamado `diagnistico-inf-133` con **React**, puedes usar `create-react-app`, `Vite`, `Next.js` o cualquier otro framework de tu preferencia.
 
-### `npm test`
+6. Reemplaza el contenido del archivo `README.md` de tu proyecto con el contenido de este archivo.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+7. Crea un repositorio en GitHub con el nombre `diagnostico-inf-133` y sube tu proyecto a este repositorio.
 
-### `npm run build`
+8. Vincula tu repositorio con el repositorio de este proyecto, puedes hacerlo ejecutando los siguientes comandos en tu terminal:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+git remote add origin <REMOTE_URL>
+```
+8. Asegúrate de que tu repositorio sea público.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+9. Completa tus datos personales:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+| Nombres        |      Apellidos |      CI |
+|----------------|----------------|----------------|
+|  `<Nombres> `  | `<Apellidos> ` | `<Carnet de identidad> ` |
+### Contexto:
 
-### `npm run eject`
+Estás postulando para un puesto de desarrollador **Front-end** en una empresa que trabaja con clientes internacionales. Para poner a prueba tus habilidades te han pedido construir una aplicación web que permita visualizar un catalogo de **Pokemons**. Para esto te han proporcionado la documentación de la API de Pokemon para obtener los datos que debe consumir tu aplicación y te han proporcionado el **diseño de UI/UX del componente para ver cada Pokemon** [Figma](https://cutt.ly/YwL1XB9s) que debe cumplir tu aplicación.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Documentación de la API de Pokemon:
+`GET https://pokeapi.co/api/v2/pokemon/{id o nombre de pokemon}`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+##### Pokemon (Tipo)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+|Nombre|Descripción|Tipo|
+|------|-----------|----|
+|id|El identificador del Pokemon|Entero|
+|name|El nombre del Pokemon|Cadena|
+|height|La altura del Pokemon en decímetros (dm)|Entero|
+|weight|El peso del Pokemon en hectogramos (hg)|Entero|
+|abilities|Lista de habilidades potenciales que el Pokemon puede tener|Lista PokemonAbility|
+|sprites|Conjunto de imágenes usadas para representar al Pokemon|PokemonSprites|
+|stats|Una lista de estadísticas base para este Pokemon|Lista PokemonStat|
+|types|Una lista detallando a qué tipo de Pokemon pertenece|Lista  PokemonType|
 
-## Learn More
+##### PokemonAbility (Tipo)
+|Nombre|Descripción|Tipo|
+|------|-----------|----|
+|ability|La habilidad que puede tener el Pokemon|NamedAPIResource (Ability)|
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+##### PokemonType (Tipo)
+|Nombre|Descripción|Tipo|
+|------|-----------|----|
+|slot|El orden en el que se listan los tipos del Pokemon|Entero|
+|type|El tipo que tiene el Pokemon|NamedAPIResource (Type)|
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+##### PokemonStat (Tipo)
+|Nombre|Descripción|Tipo|
+|------|-----------|----|
+|stat|Las estadísticas que el Pokemon tiene|NamedAPIResource (Stat)|
+|base_stat|El valor base de la estadística|Entero|
 
-### Code Splitting
+##### PokemonSprites (Tipo)
+|Nombre|Descripción|Tipo|
+|------|-----------|----|
+|front_default|La imagen por defecto del Pokemon vista desde el frente en Batalla|Cadena|
+|front_shiny|La imagen shiny del Pokemon vista desde el frente en Batalla|Cadena|
+|back_default|La imagen por defecto del Pokemon vista desde detrás en Batalla|Cadena|
+|back_shiny|La imagen shiny del Pokemon vista desde detrás en Batalla|Cadena|
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+##### NamedAPIResource (Tipo)
+|Nombre|Descripción|Tipo|
+|------|-----------|----|
+|name|El nombre del recurso puede ser una habilidad, una forma, un nombre de un juego, una estadística base, etc.|Cadena|
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Tareas:
+1. Debes construir los componentes necesarios con **React** para cumplir con el diseño mínimo de UI/UX presentado en [Figma ](https://cutt.ly/YwL1XB9s)
 
-### Making a Progressive Web App
+![Diseño Pokedex](https://live.staticflickr.com/65535/53488146658_c14ae2d79c_z.jpg)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+2. En el catálogo debes presentar los primeros 6 **Pokemons** con ids múltiplos de 5 (5, 10, 15, 20, 25, 30) en un layout de 3 x 3, es decir, 3 filas y 3 columnas.
 
-### Advanced Configuration
+#### IMPORTANTE: 
+* Para construir los componentes debes utilizar: React, JSX, TSX, eventos, estados, grid, flexbox, clases, etc. **Sin estilos CSS tu solución solo será considerada código sin sentido**. No se permite el uso de tablas.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+* La paleta de colores, textos, imágenes, iconos tienen que ser iguales al diseño presentado en Figma
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Entrega:
+Una vez tengas la app en debes realizar un commit con todos tus cambios a **tu repositorio de GitHub** del examen y adjuntar el enlace del mismo en la tarea asignada en [ClassRoom](https://classroom.google.com/c/NjUxNTg3NjM4NDU0?cjc=o67fbws).
